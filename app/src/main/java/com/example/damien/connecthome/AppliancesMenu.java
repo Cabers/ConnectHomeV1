@@ -115,6 +115,16 @@ public class AppliancesMenu extends Activity
                 }
             }
         });
+
+        try
+        {
+
+        }
+
+        catch(Exception e)
+        {
+            startActivity(new Intent(AppliancesMenu.this, ErrorScreen.class));
+        }
     }
 
 }

@@ -30,6 +30,16 @@ public class DisarmConfirmation extends Activity
                 startActivity(new Intent(DisarmConfirmation.this, AlarmMenu.class));
             }
         });
+
+        try
+        {
+
+        }
+
+        catch(Exception e)
+        {
+            startActivity(new Intent(DisarmConfirmation.this, ErrorScreen.class));
+        }
     }
 
 }

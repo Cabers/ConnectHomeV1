@@ -222,6 +222,16 @@ public class LightsMenu extends Activity
                 }
             }
         });
+
+        try
+        {
+
+        }
+
+        catch(Exception e)
+        {
+            startActivity(new Intent(LightsMenu.this, ErrorScreen.class));
+        }
     }
 
 }

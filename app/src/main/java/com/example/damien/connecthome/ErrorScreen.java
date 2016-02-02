@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.Button;
 
 /**
- * Created by caber on 04/01/2016.
+ * Created by cabers on 04/01/2016.
  */
 public class ErrorScreen extends Activity
 {
@@ -30,6 +30,16 @@ public class ErrorScreen extends Activity
                 startActivity(new Intent(ErrorScreen.this, MainMenu.class));
             }
         });
+
+        try
+        {
+
+        }
+
+        catch(Exception e)
+        {
+            startActivity(new Intent(ErrorScreen.this, ErrorScreen.class));
+        }
     }
 
 }

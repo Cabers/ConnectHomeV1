@@ -76,6 +76,16 @@ public class MainActivity extends Activity
                 startActivity(intent);
             }
         });
+
+        try
+        {
+
+        }
+
+        catch(Exception e)
+        {
+            startActivity(new Intent(MainActivity.this, ErrorScreen.class));
+        }
     }
 
 }

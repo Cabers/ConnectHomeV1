@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.Button;
 
 /**
- * Created by caber on 04/01/2016.
+ * Created by cabers on 04/01/2016.
  */
 
 public class SetConfirmation extends Activity
@@ -31,6 +31,16 @@ public class SetConfirmation extends Activity
                 startActivity(new Intent(SetConfirmation.this, AlarmMenu.class));
             }
         });
+
+        try
+        {
+
+        }
+
+        catch(Exception e)
+        {
+            startActivity(new Intent(SetConfirmation.this, ErrorScreen.class));
+        }
     }
 
 }

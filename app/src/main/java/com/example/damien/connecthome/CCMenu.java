@@ -114,6 +114,16 @@ public class CCMenu extends Activity
                 }
             }
         });
+
+        try
+        {
+
+        }
+
+        catch(Exception e)
+        {
+            startActivity(new Intent(CCMenu.this, ErrorScreen.class));
+        }
     }
 }
 

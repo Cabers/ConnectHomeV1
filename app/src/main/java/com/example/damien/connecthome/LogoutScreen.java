@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.Button;
 
 /**
- * Created by caber on 04/01/2016.
+ * Created by cabers on 04/01/2016.
  */
 public class LogoutScreen extends Activity
 {
@@ -43,6 +43,16 @@ public class LogoutScreen extends Activity
                 startActivity(intent);
             }
         });
+
+        try
+        {
+
+        }
+
+        catch(Exception e)
+        {
+            startActivity(new Intent(LogoutScreen.this, ErrorScreen.class));
+        }
     }
 
 }

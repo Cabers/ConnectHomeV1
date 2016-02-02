@@ -125,6 +125,16 @@ public class AlarmMenu extends Activity
                 }
             }
         });
+
+        try
+        {
+
+        }
+
+        catch(Exception e)
+        {
+            startActivity(new Intent(AlarmMenu.this, ErrorScreen.class));
+        }
     }
 }
 
