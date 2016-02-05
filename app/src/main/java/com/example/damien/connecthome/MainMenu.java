@@ -12,58 +12,58 @@ import android.widget.Button;
 public class MainMenu extends Activity
 {
     Button Logout, Lights, Appliances, Alarm, CC;
-    CountDownTimer count = new CountDownTimer();
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         // TODO Auto-generated method stub
         super.onCreate(savedInstanceState);
-        count = CountDownTimer();
+        CountDownTimer timer = new CountDownTimer();
+        timer.onUserInteraction();
         setContentView(R.layout.menu);
 
         Logout = (Button) findViewById(R.id.buttonL);
-
         Logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainMenu.this, LogoutScreen.class));
+                finish();
             }
         });
 
         Lights = (Button) findViewById(R.id.button);
-
         Lights.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainMenu.this, LightsMenu.class));
+                finish();
             }
         });
 
         Appliances = (Button) findViewById(R.id.button1);
-
         Appliances.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainMenu.this, AppliancesMenu.class));
+                finish();
             }
         });
 
         Alarm = (Button) findViewById(R.id.button2);
-
         Alarm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainMenu.this, AlarmMenu.class));
+                finish();
             }
         });
 
         CC = (Button) findViewById(R.id.button3);
-
         CC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainMenu.this, CCMenu.class));
+                finish();
             }
         });
 
@@ -75,6 +75,7 @@ public class MainMenu extends Activity
         catch(Exception e)
         {
             startActivity(new Intent(MainMenu.this, ErrorScreen.class));
+            finish();
         }
 
     }

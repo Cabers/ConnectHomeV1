@@ -19,6 +19,8 @@ public class CCMenu extends Activity
     {
         // TODO Auto-generated method stub
         super.onCreate(savedInstanceState);
+        CountDownTimer timer = new CountDownTimer();
+        timer.onUserInteraction();
         setContentView(R.layout.climate_control_menu);
 
         Logout = (Button) findViewById(R.id.buttonL);
@@ -35,6 +37,7 @@ public class CCMenu extends Activity
             public void onClick(View v)
             {
                 startActivity(new Intent(CCMenu.this, LogoutScreen.class));
+                finish();
             }
         });
 
@@ -44,6 +47,7 @@ public class CCMenu extends Activity
             public void onClick(View v)
             {
                 startActivity(new Intent(CCMenu.this, MainMenu.class));
+                finish();
             }
         });
 
@@ -123,6 +127,7 @@ public class CCMenu extends Activity
         catch(Exception e)
         {
             startActivity(new Intent(CCMenu.this, ErrorScreen.class));
+            finish();
         }
     }
 }

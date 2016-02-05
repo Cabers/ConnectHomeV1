@@ -25,6 +25,8 @@ public class AlarmMenu extends Activity
     {
         // TODO Auto-generated method stub
         super.onCreate(savedInstanceState);
+        CountDownTimer timer = new CountDownTimer();
+        timer.onUserInteraction();
         setContentView(R.layout.alarm_menu);
 
         Logout = (Button) findViewById(R.id.buttonL);

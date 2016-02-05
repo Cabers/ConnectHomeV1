@@ -42,6 +42,7 @@ public class MainActivity extends Activity
                 {
                     Toast.makeText(getApplicationContext(), "Signing In",Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(MainActivity.this, MainMenu.class));
+                    finish();
                 }
 
                 else
@@ -70,10 +71,7 @@ public class MainActivity extends Activity
             public void onClick(View v)
             {
                 finish();
-                Intent intent = new Intent(Intent.ACTION_MAIN);
-                intent.addCategory(intent.CATEGORY_HOME);
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                startActivity(intent);
+                System.exit(0);
             }
         });
 
@@ -85,6 +83,7 @@ public class MainActivity extends Activity
         catch(Exception e)
         {
             startActivity(new Intent(MainActivity.this, ErrorScreen.class));
+            finish();
         }
     }
 

@@ -18,16 +18,18 @@ public class ErrorScreen extends Activity
     {
         // TODO Auto-generated method stub
         super.onCreate(savedInstanceState);
+        CountDownTimer timer = new CountDownTimer();
+        timer.onUserInteraction();
         setContentView(R.layout.error_screen);
 
         Back = (Button)findViewById(R.id.button);
-
         Back.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
             {
                 startActivity(new Intent(ErrorScreen.this, MainMenu.class));
+                finish();
             }
         });
 
@@ -39,6 +41,7 @@ public class ErrorScreen extends Activity
         catch(Exception e)
         {
             startActivity(new Intent(ErrorScreen.this, ErrorScreen.class));
+            finish();
         }
     }
 

@@ -21,6 +21,8 @@ public class AppliancesMenu extends Activity
     {
         // TODO Auto-generated method stub
         super.onCreate(savedInstanceState);
+        CountDownTimer timer = new CountDownTimer();
+        timer.onUserInteraction();
         setContentView(R.layout.appliances_menu);
 
         Logout = (Button) findViewById(R.id.buttonL);
@@ -124,6 +126,7 @@ public class AppliancesMenu extends Activity
         catch(Exception e)
         {
             startActivity(new Intent(AppliancesMenu.this, ErrorScreen.class));
+            finish();
         }
     }
 

@@ -18,16 +18,18 @@ public class DisarmConfirmation extends Activity
     {
         // TODO Auto-generated method stub
         super.onCreate(savedInstanceState);
+        CountDownTimer timer = new CountDownTimer();
+        timer.onUserInteraction();
         setContentView(R.layout.disarm_confirmation);
 
         Ok=(Button)findViewById(R.id.button);
-
         Ok.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
             {
                 startActivity(new Intent(DisarmConfirmation.this, AlarmMenu.class));
+                finish();
             }
         });
 
@@ -39,6 +41,7 @@ public class DisarmConfirmation extends Activity
         catch(Exception e)
         {
             startActivity(new Intent(DisarmConfirmation.this, ErrorScreen.class));
+            finish();
         }
     }
 

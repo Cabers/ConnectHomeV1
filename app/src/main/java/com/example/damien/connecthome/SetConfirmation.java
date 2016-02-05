@@ -19,16 +19,18 @@ public class SetConfirmation extends Activity
     {
         // TODO Auto-generated method stub
         super.onCreate(savedInstanceState);
+        CountDownTimer timer = new CountDownTimer();
+        timer.onUserInteraction();
         setContentView(R.layout.set_confirmation);
 
         Ok=(Button)findViewById(R.id.button);
-
         Ok.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
             {
                 startActivity(new Intent(SetConfirmation.this, AlarmMenu.class));
+                finish();
             }
         });
 
@@ -40,6 +42,7 @@ public class SetConfirmation extends Activity
         catch(Exception e)
         {
             startActivity(new Intent(SetConfirmation.this, ErrorScreen.class));
+            finish();
         }
     }
 

@@ -18,29 +18,27 @@ public class LogoutScreen extends Activity
     {
         // TODO Auto-generated method stub
         super.onCreate(savedInstanceState);
+        CountDownTimer timer = new CountDownTimer();
+        timer.onUserInteraction();
         setContentView(R.layout.logout_menu);
 
         SignBackIn = (Button) findViewById(R.id.button);
-
         SignBackIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(LogoutScreen.this, MainActivity.class));
+                finish();
             }
         });
 
         Exit = (Button) findViewById(R.id.button1);
-
         Exit.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
             {
                 finish();
-                Intent intent = new Intent(Intent.ACTION_MAIN);
-                intent.addCategory(intent.CATEGORY_HOME);
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                startActivity(intent);
+                System.exit(0);
             }
         });
 
@@ -52,6 +50,7 @@ public class LogoutScreen extends Activity
         catch(Exception e)
         {
             startActivity(new Intent(LogoutScreen.this, ErrorScreen.class));
+            finish();
         }
     }
 

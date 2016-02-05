@@ -20,6 +20,8 @@ public class LightsMenu extends Activity
     {
         // TODO Auto-generated method stub
         super.onCreate(savedInstanceState);
+        CountDownTimer timer = new CountDownTimer();
+        timer.onUserInteraction();
         setContentView(R.layout.lights_menu);
 
         Logout = (Button) findViewById(R.id.buttonL);
@@ -41,6 +43,7 @@ public class LightsMenu extends Activity
             public void onClick(View v)
             {
                 startActivity(new Intent(LightsMenu.this, LogoutScreen.class));
+                finish();
             }
         });
 
@@ -50,6 +53,7 @@ public class LightsMenu extends Activity
             public void onClick(View v)
             {
                 startActivity(new Intent(LightsMenu.this, MainMenu.class));
+                finish();
             }
         });
 
@@ -231,6 +235,7 @@ public class LightsMenu extends Activity
         catch(Exception e)
         {
             startActivity(new Intent(LightsMenu.this, ErrorScreen.class));
+            finish();
         }
     }
 
