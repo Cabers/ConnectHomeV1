@@ -44,6 +44,7 @@ public class AlarmMenu extends Activity
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(AlarmMenu.this, LogoutScreen.class));
+                finish();
             }
         });
 
@@ -53,6 +54,7 @@ public class AlarmMenu extends Activity
             public void onClick(View v)
             {
                 startActivity(new Intent(AlarmMenu.this, MainMenu.class));
+                finish();
             }
         });
 
@@ -64,6 +66,7 @@ public class AlarmMenu extends Activity
                 if (ed1.getText().toString().equals("1234"))
                 {
                     Toast.makeText(getApplicationContext(), "Redirecting...", Toast.LENGTH_SHORT).show();
+                    finish();
                 }
 
                 else
@@ -74,15 +77,18 @@ public class AlarmMenu extends Activity
                     tx1.setBackgroundColor(Color.RED);
                     counter--;
                     tx1.setText(Integer.toString(counter));
+                    finish();
 
                     if (counter == 2)
                     {
                         Toast.makeText(getApplicationContext(), "2 Attempts Remaining", Toast.LENGTH_SHORT).show();
+                        finish();
                     }
 
                     if (counter == 1)
                     {
                         Toast.makeText(getApplicationContext(), "Last Attempt", Toast.LENGTH_SHORT).show();
+                        finish();
                     }
 
                     if (counter == 0)
@@ -92,6 +98,7 @@ public class AlarmMenu extends Activity
                         intent.addCategory(intent.CATEGORY_HOME);
                         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                         startActivity(intent);
+                        finish();
                     }
                 }
             }
@@ -105,6 +112,7 @@ public class AlarmMenu extends Activity
                 if(ed1.getText().toString().equals("1234"))
                 {
                     Toast.makeText(getApplicationContext(), "Redirecting...", Toast.LENGTH_SHORT).show();
+                    finish();
                 }
 
                 else
@@ -115,6 +123,7 @@ public class AlarmMenu extends Activity
                     tx1.setBackgroundColor(Color.RED);
                     counter--;
                     tx1.setText(Integer.toString(counter));
+                    finish();
 
                     if (counter == 0)
                     {
@@ -123,6 +132,7 @@ public class AlarmMenu extends Activity
                         intent.addCategory(intent.CATEGORY_HOME);
                         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                         startActivity(intent);
+                        finish();
                     }
                 }
             }
@@ -136,6 +146,7 @@ public class AlarmMenu extends Activity
         catch(Exception e)
         {
             startActivity(new Intent(AlarmMenu.this, ErrorScreen.class));
+            finish();
         }
     }
 }

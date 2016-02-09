@@ -57,12 +57,12 @@ public class AppliancesMenu extends Activity
             {
                 if(Kettle.isChecked())
                 {
-
+                    finish();
                 }
 
                 else
                 {
-
+                    finish();
                 }
             }
         });
@@ -74,12 +74,12 @@ public class AppliancesMenu extends Activity
             {
                 if(WM.isChecked())
                 {
-
+                    finish();
                 }
 
                 else
                 {
-
+                    finish();
                 }
             }
         });
@@ -91,12 +91,12 @@ public class AppliancesMenu extends Activity
             {
                 if(Oven.isChecked())
                 {
-
+                    finish();
                 }
 
                 else
                 {
-
+                    finish();
                 }
             }
         });
@@ -108,12 +108,12 @@ public class AppliancesMenu extends Activity
             {
                 if(Blinds.isChecked())
                 {
-
+                    finish();
                 }
 
                 else
                 {
-
+                    finish();
                 }
             }
         });

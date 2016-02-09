@@ -64,12 +64,12 @@ public class LightsMenu extends Activity
             {
                 if(Kitchen.isChecked())
                 {
-
+                    finish();
                 }
 
                 else
                 {
-
+                    finish();
                 }
             }
         });
@@ -81,12 +81,12 @@ public class LightsMenu extends Activity
             {
                 if(Dining.isChecked())
                 {
-
+                    finish();
                 }
 
                 else
                 {
-
+                    finish();
                 }
             }
         });
@@ -98,12 +98,12 @@ public class LightsMenu extends Activity
             {
                 if(Living.isChecked())
                 {
-
+                    finish();
                 }
 
                 else
                 {
-
+                    finish();
                 }
             }
         });
@@ -115,12 +115,12 @@ public class LightsMenu extends Activity
             {
                 if(Hall.isChecked())
                 {
-
+                    finish();
                 }
 
                 else
                 {
-
+                    finish();
                 }
             }
         });
@@ -132,12 +132,12 @@ public class LightsMenu extends Activity
             {
                 if(Bath.isChecked())
                 {
-
+                    finish();
                 }
 
                 else
                 {
-
+                    finish();
                 }
             }
         });
@@ -149,12 +149,12 @@ public class LightsMenu extends Activity
             {
                 if(B1.isChecked())
                 {
-
+                    finish();
                 }
 
                 else
                 {
-
+                    finish();
                 }
             }
         });
@@ -166,12 +166,12 @@ public class LightsMenu extends Activity
             {
                 if(B2.isChecked())
                 {
-
+                    finish();
                 }
 
                 else
                 {
-
+                    finish();
                 }
             }
         });
@@ -183,12 +183,12 @@ public class LightsMenu extends Activity
             {
                 if(B3.isChecked())
                 {
-
+                    finish();
                 }
 
                 else
                 {
-
+                    finish();
                 }
             }
         });
@@ -200,12 +200,12 @@ public class LightsMenu extends Activity
             {
                 if(FDoor.isChecked())
                 {
-
+                    finish();
                 }
 
                 else
                 {
-
+                    finish();
                 }
             }
         });
@@ -217,12 +217,12 @@ public class LightsMenu extends Activity
             {
                 if(BDoor.isChecked())
                 {
-
+                    finish();
                 }
 
                 else
                 {
-
+                    finish();
                 }
             }
         });

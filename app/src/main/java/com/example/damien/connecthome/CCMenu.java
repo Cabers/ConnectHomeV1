@@ -59,11 +59,13 @@ public class CCMenu extends Activity
                 if(Immer1.isChecked())
                 {
                     Immer2.setVisibility(View.VISIBLE);
+                    finish();
                 }
 
                 else
                 {
                     Immer2.setVisibility(View.GONE);
+                    finish();
                 }
             }
         });
@@ -75,12 +77,12 @@ public class CCMenu extends Activity
             {
                 if(Immer2.isChecked())
                 {
-
+                    finish();
                 }
 
                 else
                 {
-
+                    finish();
                 }
             }
         });
@@ -92,12 +94,12 @@ public class CCMenu extends Activity
             {
                 if(AC.isChecked())
                 {
-
+                    finish();
                 }
 
                 else
                 {
-
+                    finish();
                 }
             }
         });
@@ -109,12 +111,12 @@ public class CCMenu extends Activity
             {
                 if(Heating.isChecked())
                 {
-
+                    finish();
                 }
 
                 else
                 {
-
+                    finish();
                 }
             }
         });

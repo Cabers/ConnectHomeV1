@@ -1,8 +1,11 @@
 package com.example.damien.connecthome;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
+import android.net.wifi.WifiConfiguration;
+import android.net.wifi.WifiManager;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -12,10 +15,27 @@ import android.widget.Toast;
 
 public class MainActivity extends Activity
 {
+    String networkSSID = "test";
+    String networkPass = "pass";
     Button SignIn,Cancel;
     EditText ed1,ed2;
     TextView tx, tx1;
     int counter = 3;
+
+    private void EnableWifi()
+    {
+        WifiConfiguration wifiConfig = new WifiConfiguration();
+        wifiConfig.SSID = String.format("\"{0}\"", networkSSID);
+        wifiConfig.preSharedKey = String.format("\"{0}\"", networkPass);
+
+        WifiManager wifiManager = (WifiManager) getSystemService(Context.WIFI_SERVICE);
+
+        //Use ID
+        int netId = wifiManager.addNetwork(wifiConfig);
+        wifiManager.disconnect();
+        wifiManager.enableNetwork(netId, true);
+        wifiManager.reconnect();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -37,8 +57,8 @@ public class MainActivity extends Activity
             @Override
             public void onClick(View v)
             {
-                if(ed1.getText().toString().equals("admin") &&
-                        ed2.getText().toString().equals("admin"))
+                if(ed1.getText().toString().equals(networkSSID) &&
+                        ed2.getText().toString().equals(networkPass))
                 {
                     Toast.makeText(getApplicationContext(), "Signing In",Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(MainActivity.this, MainMenu.class));
