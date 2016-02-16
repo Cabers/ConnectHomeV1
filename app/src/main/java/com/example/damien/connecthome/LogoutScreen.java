@@ -12,15 +12,22 @@ import android.widget.Button;
 public class LogoutScreen extends Activity
 {
     Button SignBackIn, Exit;
+    CountDownTimer timer = new CountDownTimer(60000, new IIdleCallback()
+    {
+        public void inactivityDetected()
+        {
+            finish();
+            System.exit(0);
+        }
+    });
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         // TODO Auto-generated method stub
         super.onCreate(savedInstanceState);
-        CountDownTimer timer = new CountDownTimer();
-        timer.onUserInteraction();
         setContentView(R.layout.logout_menu);
+        timer.startCountDownTimer();
 
         SignBackIn = (Button) findViewById(R.id.button);
         SignBackIn.setOnClickListener(new View.OnClickListener() {

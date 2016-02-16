@@ -13,15 +13,22 @@ import android.widget.Button;
 public class SetConfirmation extends Activity
 {
     Button Ok;
+    CountDownTimer timer = new CountDownTimer(60000, new IIdleCallback()
+    {
+        public void inactivityDetected()
+        {
+            finish();
+            System.exit(0);
+        }
+    });
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         // TODO Auto-generated method stub
         super.onCreate(savedInstanceState);
-        CountDownTimer timer = new CountDownTimer();
-        timer.onUserInteraction();
         setContentView(R.layout.set_confirmation);
+        timer.startCountDownTimer();
 
         Ok=(Button)findViewById(R.id.button);
         Ok.setOnClickListener(new View.OnClickListener()

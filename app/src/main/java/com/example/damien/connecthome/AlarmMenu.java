@@ -19,15 +19,22 @@ public class AlarmMenu extends Activity
     EditText ed1, ed2;
     TextView tx, tx1;
     int counter = 3;
+    CountDownTimer timer = new CountDownTimer(60000, new IIdleCallback()
+    {
+        public void inactivityDetected()
+        {
+            finish();
+            System.exit(0);
+        }
+    });
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         // TODO Auto-generated method stub
         super.onCreate(savedInstanceState);
-        CountDownTimer timer = new CountDownTimer();
-        timer.onUserInteraction();
         setContentView(R.layout.alarm_menu);
+        timer.startCountDownTimer();
 
         Logout = (Button) findViewById(R.id.buttonL);
         Back = (Button) findViewById(R.id.buttonB);
@@ -65,12 +72,14 @@ public class AlarmMenu extends Activity
             {
                 if (ed1.getText().toString().equals("1234"))
                 {
+                    timer.restartCountDownTimer();
                     Toast.makeText(getApplicationContext(), "Redirecting...", Toast.LENGTH_SHORT).show();
                     finish();
                 }
 
                 else
                 {
+                    timer.restartCountDownTimer();
                     Toast.makeText(getApplicationContext(), "Wrong Password", Toast.LENGTH_SHORT).show();
                     tx.setVisibility(View.VISIBLE);
                     tx1.setVisibility(View.VISIBLE);
@@ -111,14 +120,15 @@ public class AlarmMenu extends Activity
             {
                 if(ed1.getText().toString().equals("1234"))
                 {
+                    timer.restartCountDownTimer();
                     Toast.makeText(getApplicationContext(), "Redirecting...", Toast.LENGTH_SHORT).show();
                     finish();
                 }
 
                 else
                 {
+                    timer.restartCountDownTimer();
                     Toast.makeText(getApplicationContext(), "Wrong Password",Toast.LENGTH_SHORT).show();
-
                     tx1.setVisibility(View.VISIBLE);
                     tx1.setBackgroundColor(Color.RED);
                     counter--;
@@ -149,5 +159,6 @@ public class AlarmMenu extends Activity
             finish();
         }
     }
+
 }
 

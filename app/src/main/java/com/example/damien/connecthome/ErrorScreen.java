@@ -12,15 +12,22 @@ import android.widget.Button;
 public class ErrorScreen extends Activity
 {
     Button Back;
+    CountDownTimer timer = new CountDownTimer(60000, new IIdleCallback()
+    {
+        public void inactivityDetected()
+        {
+            finish();
+            System.exit(0);
+        }
+    });
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         // TODO Auto-generated method stub
         super.onCreate(savedInstanceState);
-        CountDownTimer timer = new CountDownTimer();
-        timer.onUserInteraction();
         setContentView(R.layout.error_screen);
+        timer.restartCountDownTimer();
 
         Back = (Button)findViewById(R.id.button);
         Back.setOnClickListener(new View.OnClickListener()

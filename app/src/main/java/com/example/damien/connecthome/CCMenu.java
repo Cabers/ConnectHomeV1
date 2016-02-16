@@ -14,14 +14,22 @@ public class CCMenu extends Activity
 {
     Button Logout, Back;
     ToggleButton Immer1, Immer2, AC, Heating;
+    CountDownTimer timer = new CountDownTimer(60000, new IIdleCallback()
+    {
+        @Override
+        public void inactivityDetected()
+        {
+            finish();
+            System.exit(0);
+        }
+    });
 
     protected void onCreate(Bundle savedInstanceState)
     {
         // TODO Auto-generated method stub
         super.onCreate(savedInstanceState);
-        CountDownTimer timer = new CountDownTimer();
-        timer.onUserInteraction();
         setContentView(R.layout.climate_control_menu);
+        timer.startCountDownTimer();
 
         Logout = (Button) findViewById(R.id.buttonL);
         Back = (Button) findViewById(R.id.buttonB);
@@ -58,12 +66,14 @@ public class CCMenu extends Activity
             {
                 if(Immer1.isChecked())
                 {
+                    timer.restartCountDownTimer();
                     Immer2.setVisibility(View.VISIBLE);
                     finish();
                 }
 
                 else
                 {
+                    timer.restartCountDownTimer();
                     Immer2.setVisibility(View.GONE);
                     finish();
                 }
@@ -77,11 +87,13 @@ public class CCMenu extends Activity
             {
                 if(Immer2.isChecked())
                 {
+                    timer.restartCountDownTimer();
                     finish();
                 }
 
                 else
                 {
+                    timer.restartCountDownTimer();
                     finish();
                 }
             }
@@ -94,11 +106,13 @@ public class CCMenu extends Activity
             {
                 if(AC.isChecked())
                 {
+                    timer.restartCountDownTimer();
                     finish();
                 }
 
                 else
                 {
+                    timer.restartCountDownTimer();
                     finish();
                 }
             }
@@ -111,11 +125,13 @@ public class CCMenu extends Activity
             {
                 if(Heating.isChecked())
                 {
+                    timer.restartCountDownTimer();
                     finish();
                 }
 
                 else
                 {
+                    timer.restartCountDownTimer();
                     finish();
                 }
             }

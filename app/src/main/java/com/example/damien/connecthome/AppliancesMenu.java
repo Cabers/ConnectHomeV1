@@ -16,14 +16,21 @@ public class AppliancesMenu extends Activity
 {
     Button Logout, Back;
     ToggleButton Kettle, WM, Oven, Blinds;
+    CountDownTimer timer = new CountDownTimer(60000, new IIdleCallback()
+    {
+        public void inactivityDetected()
+        {
+            finish();
+            System.exit(0);
+        }
+    });
 
     protected void onCreate(Bundle savedInstanceState)
     {
         // TODO Auto-generated method stub
         super.onCreate(savedInstanceState);
-        CountDownTimer timer = new CountDownTimer();
-        timer.onUserInteraction();
         setContentView(R.layout.appliances_menu);
+        timer.startCountDownTimer();
 
         Logout = (Button) findViewById(R.id.buttonL);
         Back = (Button) findViewById(R.id.buttonB);
@@ -57,12 +64,12 @@ public class AppliancesMenu extends Activity
             {
                 if(Kettle.isChecked())
                 {
-                    finish();
+                    timer.restartCountDownTimer();
                 }
 
                 else
                 {
-                    finish();
+                    timer.restartCountDownTimer();
                 }
             }
         });
@@ -74,12 +81,12 @@ public class AppliancesMenu extends Activity
             {
                 if(WM.isChecked())
                 {
-                    finish();
+                    timer.restartCountDownTimer();
                 }
 
                 else
                 {
-                    finish();
+                    timer.restartCountDownTimer();
                 }
             }
         });
@@ -91,12 +98,12 @@ public class AppliancesMenu extends Activity
             {
                 if(Oven.isChecked())
                 {
-                    finish();
+                    timer.restartCountDownTimer();
                 }
 
                 else
                 {
-                    finish();
+                    timer.restartCountDownTimer();
                 }
             }
         });
@@ -108,12 +115,12 @@ public class AppliancesMenu extends Activity
             {
                 if(Blinds.isChecked())
                 {
-                    finish();
+                    timer.restartCountDownTimer();
                 }
 
                 else
                 {
-                    finish();
+                    timer.restartCountDownTimer();
                 }
             }
         });

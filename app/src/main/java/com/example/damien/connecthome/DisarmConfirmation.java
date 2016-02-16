@@ -12,15 +12,23 @@ import android.widget.Button;
 public class DisarmConfirmation extends Activity
 {
     Button Ok;
+    CountDownTimer timer = new CountDownTimer(60000, new IIdleCallback()
+    {
+        @Override
+        public void inactivityDetected()
+        {
+            finish();
+            System.exit(0);
+        }
+    });
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         // TODO Auto-generated method stub
         super.onCreate(savedInstanceState);
-        CountDownTimer timer = new CountDownTimer();
-        timer.onUserInteraction();
         setContentView(R.layout.disarm_confirmation);
+        timer.startCountDownTimer();
 
         Ok=(Button)findViewById(R.id.button);
         Ok.setOnClickListener(new View.OnClickListener()

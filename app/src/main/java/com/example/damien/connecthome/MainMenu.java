@@ -12,15 +12,22 @@ import android.widget.Button;
 public class MainMenu extends Activity
 {
     Button Logout, Lights, Appliances, Alarm, CC;
+    CountDownTimer timer = new CountDownTimer(60000, new IIdleCallback()
+    {
+        public void inactivityDetected()
+        {
+            finish();
+            System.exit(0);
+        }
+    });
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         // TODO Auto-generated method stub
         super.onCreate(savedInstanceState);
-        CountDownTimer timer = new CountDownTimer();
-        timer.onUserInteraction();
         setContentView(R.layout.menu);
+        timer.startCountDownTimer();
 
         Logout = (Button) findViewById(R.id.buttonL);
         Logout.setOnClickListener(new View.OnClickListener() {
