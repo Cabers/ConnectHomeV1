@@ -65,11 +65,15 @@ public class AppliancesMenu extends Activity
                 if(Kettle.isChecked())
                 {
                     timer.restartCountDownTimer();
+                    PowerState state = PowerState.ON;
+                    System.out.println(state.getStateCode());
                 }
 
                 else
                 {
                     timer.restartCountDownTimer();
+                    PowerState state = PowerState.OFF;
+                    System.out.println(state.getStateCode());
                 }
             }
         });
@@ -82,11 +86,15 @@ public class AppliancesMenu extends Activity
                 if(WM.isChecked())
                 {
                     timer.restartCountDownTimer();
+                    PowerState state = PowerState.ON;
+                    System.out.println(state.getStateCode());
                 }
 
                 else
                 {
                     timer.restartCountDownTimer();
+                    PowerState state = PowerState.OFF;
+                    System.out.println(state.getStateCode());
                 }
             }
         });
@@ -99,11 +107,15 @@ public class AppliancesMenu extends Activity
                 if(Oven.isChecked())
                 {
                     timer.restartCountDownTimer();
+                    PowerState state = PowerState.ON;
+                    System.out.println(state.getStateCode());
                 }
 
                 else
                 {
                     timer.restartCountDownTimer();
+                    PowerState state = PowerState.OFF;
+                    System.out.println(state.getStateCode());
                 }
             }
         });
@@ -116,11 +128,15 @@ public class AppliancesMenu extends Activity
                 if(Blinds.isChecked())
                 {
                     timer.restartCountDownTimer();
+                    PowerState state = PowerState.OPEN;
+                    System.out.println(state.getStateCode());
                 }
 
                 else
                 {
                     timer.restartCountDownTimer();
+                    PowerState state = PowerState.SHUT;
+                    System.out.println(state.getStateCode());
                 }
             }
         });

@@ -19,6 +19,7 @@ public class AlarmMenu extends Activity
     EditText ed1, ed2;
     TextView tx, tx1;
     int counter = 3;
+    String passcode = "1234";
     CountDownTimer timer = new CountDownTimer(60000, new IIdleCallback()
     {
         public void inactivityDetected()
@@ -70,34 +71,36 @@ public class AlarmMenu extends Activity
             @Override
             public void onClick(View v)
             {
-                if (ed1.getText().toString().equals("1234"))
+                if (ed1.getText().toString().equals(passcode))
                 {
                     timer.restartCountDownTimer();
+                    PowerState state = PowerState.SET;
+                    System.out.println(state.getStateCode());
                     Toast.makeText(getApplicationContext(), "Redirecting...", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(AlarmMenu.this, SetConfirmation.class));
                     finish();
                 }
 
                 else
                 {
                     timer.restartCountDownTimer();
+                    PowerState state = PowerState.DISARM;
+                    System.out.println(state.getStateCode());
                     Toast.makeText(getApplicationContext(), "Wrong Password", Toast.LENGTH_SHORT).show();
                     tx.setVisibility(View.VISIBLE);
                     tx1.setVisibility(View.VISIBLE);
                     tx1.setBackgroundColor(Color.RED);
                     counter--;
                     tx1.setText(Integer.toString(counter));
-                    finish();
 
                     if (counter == 2)
                     {
                         Toast.makeText(getApplicationContext(), "2 Attempts Remaining", Toast.LENGTH_SHORT).show();
-                        finish();
                     }
 
                     if (counter == 1)
                     {
                         Toast.makeText(getApplicationContext(), "Last Attempt", Toast.LENGTH_SHORT).show();
-                        finish();
                     }
 
                     if (counter == 0)
@@ -118,26 +121,41 @@ public class AlarmMenu extends Activity
             @Override
             public void onClick(View v)
             {
-                if(ed1.getText().toString().equals("1234"))
+                if(ed2.getText().toString().equals(passcode))
                 {
                     timer.restartCountDownTimer();
+                    PowerState state = PowerState.DISARM;
+                    System.out.println(state.getStateCode());
                     Toast.makeText(getApplicationContext(), "Redirecting...", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(AlarmMenu.this, DisarmConfirmation.class));
                     finish();
                 }
 
                 else
                 {
                     timer.restartCountDownTimer();
-                    Toast.makeText(getApplicationContext(), "Wrong Password",Toast.LENGTH_SHORT).show();
+                    PowerState state = PowerState.SET;
+                    System.out.println(state.getStateCode());
+                    Toast.makeText(getApplicationContext(), "Wrong Password", Toast.LENGTH_SHORT).show();
+                    tx.setVisibility(View.VISIBLE);
                     tx1.setVisibility(View.VISIBLE);
                     tx1.setBackgroundColor(Color.RED);
                     counter--;
                     tx1.setText(Integer.toString(counter));
-                    finish();
+
+                    if (counter == 2)
+                    {
+                        Toast.makeText(getApplicationContext(), "2 Attempts Remaining", Toast.LENGTH_SHORT).show();
+                    }
+
+                    if (counter == 1)
+                    {
+                        Toast.makeText(getApplicationContext(), "Last Attempt", Toast.LENGTH_SHORT).show();
+                    }
 
                     if (counter == 0)
                     {
-                        Disarm.setEnabled(false);
+                        Set.setEnabled(false);
                         Intent intent = new Intent(Intent.ACTION_MAIN);
                         intent.addCategory(intent.CATEGORY_HOME);
                         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);

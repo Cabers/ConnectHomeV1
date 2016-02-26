@@ -71,11 +71,15 @@ public class LightsMenu extends Activity
                 if(Kitchen.isChecked())
                 {
                     timer.restartCountDownTimer();
+                    PowerState state = PowerState.ON;
+                    System.out.println(state.getStateCode());
                 }
 
                 else
                 {
                     timer.restartCountDownTimer();
+                    PowerState state = PowerState.OFF;
+                    System.out.println(state.getStateCode());
                 }
             }
         });
@@ -88,11 +92,17 @@ public class LightsMenu extends Activity
                 if(Dining.isChecked())
                 {
                     timer.restartCountDownTimer();
+                    PowerState state = PowerState.ON;
+                    System.out.println(state.getStateCode());
+
                 }
 
                 else
                 {
                     timer.restartCountDownTimer();
+                    PowerState state = PowerState.OFF;
+                    System.out.println(state.getStateCode());
+
                 }
             }
         });
@@ -105,11 +115,15 @@ public class LightsMenu extends Activity
                 if(Living.isChecked())
                 {
                     timer.restartCountDownTimer();
+                    PowerState state = PowerState.ON;
+                    System.out.println(state.getStateCode());
                 }
 
                 else
                 {
                     timer.restartCountDownTimer();
+                    PowerState state = PowerState.OFF;
+                    System.out.println(state.getStateCode());
                 }
             }
         });
@@ -122,11 +136,15 @@ public class LightsMenu extends Activity
                 if(Hall.isChecked())
                 {
                     timer.restartCountDownTimer();
+                    PowerState state = PowerState.ON;
+                    System.out.println(state.getStateCode());
                 }
 
                 else
                 {
                     timer.restartCountDownTimer();
+                    PowerState state = PowerState.OFF;
+                    System.out.println(state.getStateCode());
                 }
             }
         });
@@ -139,11 +157,15 @@ public class LightsMenu extends Activity
                 if(Bath.isChecked())
                 {
                     timer.restartCountDownTimer();
+                    PowerState state = PowerState.ON;
+                    System.out.println(state.getStateCode());
                 }
 
                 else
                 {
                     timer.restartCountDownTimer();
+                    PowerState state = PowerState.OFF;
+                    System.out.println(state.getStateCode());
                 }
             }
         });
@@ -156,11 +178,15 @@ public class LightsMenu extends Activity
                 if(B1.isChecked())
                 {
                     timer.restartCountDownTimer();
+                    PowerState state = PowerState.ON;
+                    System.out.println(state.getStateCode());
                 }
 
                 else
                 {
                     timer.restartCountDownTimer();
+                    PowerState state = PowerState.OFF;
+                    System.out.println(state.getStateCode());
                 }
             }
         });
@@ -173,11 +199,15 @@ public class LightsMenu extends Activity
                 if(B2.isChecked())
                 {
                     timer.restartCountDownTimer();
+                    PowerState state = PowerState.ON;
+                    System.out.println(state.getStateCode());
                 }
 
                 else
                 {
                     timer.restartCountDownTimer();
+                    PowerState state = PowerState.OFF;
+                    System.out.println(state.getStateCode());
                 }
             }
         });
@@ -190,11 +220,15 @@ public class LightsMenu extends Activity
                 if(B3.isChecked())
                 {
                     timer.restartCountDownTimer();
+                    PowerState state = PowerState.ON;
+                    System.out.println(state.getStateCode());
                 }
 
                 else
                 {
                     timer.restartCountDownTimer();
+                    PowerState state = PowerState.OFF;
+                    System.out.println(state.getStateCode());
                 }
             }
         });
@@ -207,11 +241,15 @@ public class LightsMenu extends Activity
                 if(FDoor.isChecked())
                 {
                     timer.restartCountDownTimer();
+                    PowerState state = PowerState.ON;
+                    System.out.println(state.getStateCode());
                 }
 
                 else
                 {
                     timer.restartCountDownTimer();
+                    PowerState state = PowerState.OFF;
+                    System.out.println(state.getStateCode());
                 }
             }
         });
@@ -224,11 +262,15 @@ public class LightsMenu extends Activity
                 if(BDoor.isChecked())
                 {
                     timer.restartCountDownTimer();
+                    PowerState state = PowerState.ON;
+                    System.out.println(state.getStateCode());
                 }
 
                 else
                 {
                     timer.restartCountDownTimer();
+                    PowerState state = PowerState.OFF;
+                    System.out.println(state.getStateCode());
                 }
             }
 

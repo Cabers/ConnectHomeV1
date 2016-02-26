@@ -67,15 +67,17 @@ public class CCMenu extends Activity
                 if(Immer1.isChecked())
                 {
                     timer.restartCountDownTimer();
+                    PowerState state = PowerState.ON;
+                    System.out.println(state.getStateCode());
                     Immer2.setVisibility(View.VISIBLE);
-                    finish();
                 }
 
                 else
                 {
                     timer.restartCountDownTimer();
+                    PowerState state = PowerState.OFF;
+                    System.out.println(state.getStateCode());
                     Immer2.setVisibility(View.GONE);
-                    finish();
                 }
             }
         });
@@ -88,13 +90,15 @@ public class CCMenu extends Activity
                 if(Immer2.isChecked())
                 {
                     timer.restartCountDownTimer();
-                    finish();
+                    PowerState state = PowerState.SINK;
+                    System.out.println(state.getStateCode());
                 }
 
                 else
                 {
                     timer.restartCountDownTimer();
-                    finish();
+                    PowerState state = PowerState.BATH;
+                    System.out.println(state.getStateCode());
                 }
             }
         });
@@ -107,13 +111,15 @@ public class CCMenu extends Activity
                 if(AC.isChecked())
                 {
                     timer.restartCountDownTimer();
-                    finish();
+                    PowerState state = PowerState.ON;
+                    System.out.println(state.getStateCode());
                 }
 
                 else
                 {
                     timer.restartCountDownTimer();
-                    finish();
+                    PowerState state = PowerState.OFF;
+                    System.out.println(state.getStateCode());
                 }
             }
         });
@@ -126,13 +132,15 @@ public class CCMenu extends Activity
                 if(Heating.isChecked())
                 {
                     timer.restartCountDownTimer();
-                    finish();
+                    PowerState state = PowerState.ON;
+                    System.out.println(state.getStateCode());
                 }
 
                 else
                 {
                     timer.restartCountDownTimer();
-                    finish();
+                    PowerState state = PowerState.OFF;
+                    System.out.println(state.getStateCode());
                 }
             }
         });
