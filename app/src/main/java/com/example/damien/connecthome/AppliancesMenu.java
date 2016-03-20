@@ -45,6 +45,7 @@ public class AppliancesMenu extends Activity
             public void onClick(View v)
             {
                 startActivity(new Intent(AppliancesMenu.this, LogoutScreen.class));
+                finish();
             }
         });
 
@@ -54,6 +55,7 @@ public class AppliancesMenu extends Activity
             public void onClick(View v)
             {
                 startActivity(new Intent(AppliancesMenu.this, MainMenu.class));
+                finish();
             }
         });
 
