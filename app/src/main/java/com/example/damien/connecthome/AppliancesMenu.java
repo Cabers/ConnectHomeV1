@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 import android.widget.ToggleButton;
 
 /**
@@ -44,6 +43,7 @@ public class AppliancesMenu extends Activity
             @Override
             public void onClick(View v)
             {
+                timer.stopCountDownTimer();
                 startActivity(new Intent(AppliancesMenu.this, LogoutScreen.class));
                 finish();
             }
@@ -54,6 +54,7 @@ public class AppliancesMenu extends Activity
             @Override
             public void onClick(View v)
             {
+                timer.stopCountDownTimer();
                 startActivity(new Intent(AppliancesMenu.this, MainMenu.class));
                 finish();
             }
@@ -150,6 +151,7 @@ public class AppliancesMenu extends Activity
 
         catch(Exception e)
         {
+            timer.stopCountDownTimer();
             startActivity(new Intent(AppliancesMenu.this, ErrorScreen.class));
             finish();
         }

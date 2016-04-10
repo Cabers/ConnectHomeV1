@@ -41,7 +41,7 @@
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:id="@+id/editText"
-        android:hint="@string/router_name"
+        android:hint="@string/network_name"
         android:focusable="true"
         android:textColorHighlight="#51caf2"
         android:textColorHint="#FFFFFF"

@@ -44,6 +44,7 @@ public class CCMenu extends Activity
             @Override
             public void onClick(View v)
             {
+                timer.stopCountDownTimer();
                 startActivity(new Intent(CCMenu.this, LogoutScreen.class));
                 finish();
             }
@@ -54,6 +55,7 @@ public class CCMenu extends Activity
             @Override
             public void onClick(View v)
             {
+                timer.stopCountDownTimer();
                 startActivity(new Intent(CCMenu.this, MainMenu.class));
                 finish();
             }
@@ -152,6 +154,7 @@ public class CCMenu extends Activity
 
         catch(Exception e)
         {
+            timer.stopCountDownTimer();
             startActivity(new Intent(CCMenu.this, ErrorScreen.class));
             finish();
         }

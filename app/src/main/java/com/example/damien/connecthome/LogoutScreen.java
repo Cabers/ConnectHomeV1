@@ -33,6 +33,7 @@ public class LogoutScreen extends Activity
         SignBackIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                timer.stopCountDownTimer();
                 startActivity(new Intent(LogoutScreen.this, MainActivity.class));
                 finish();
             }
@@ -56,6 +57,7 @@ public class LogoutScreen extends Activity
 
         catch(Exception e)
         {
+            timer.stopCountDownTimer();
             startActivity(new Intent(LogoutScreen.this, ErrorScreen.class));
             finish();
         }

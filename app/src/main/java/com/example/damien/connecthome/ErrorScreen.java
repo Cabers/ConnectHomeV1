@@ -35,6 +35,7 @@ public class ErrorScreen extends Activity
             @Override
             public void onClick(View v)
             {
+                timer.stopCountDownTimer();
                 startActivity(new Intent(ErrorScreen.this, MainMenu.class));
                 finish();
             }
@@ -47,6 +48,7 @@ public class ErrorScreen extends Activity
 
         catch(Exception e)
         {
+            timer.stopCountDownTimer();
             startActivity(new Intent(ErrorScreen.this, ErrorScreen.class));
             finish();
         }

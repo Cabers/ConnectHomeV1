@@ -33,6 +33,7 @@ public class MainMenu extends Activity
         Logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                timer.stopCountDownTimer();
                 startActivity(new Intent(MainMenu.this, LogoutScreen.class));
                 finish();
             }
@@ -42,6 +43,7 @@ public class MainMenu extends Activity
         Lights.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                timer.stopCountDownTimer();
                 startActivity(new Intent(MainMenu.this, LightsMenu.class));
                 finish();
             }
@@ -51,6 +53,7 @@ public class MainMenu extends Activity
         Appliances.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                timer.stopCountDownTimer();
                 startActivity(new Intent(MainMenu.this, AppliancesMenu.class));
                 finish();
             }
@@ -60,6 +63,7 @@ public class MainMenu extends Activity
         Alarm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                timer.stopCountDownTimer();
                 startActivity(new Intent(MainMenu.this, AlarmMenu.class));
                 finish();
             }
@@ -69,6 +73,7 @@ public class MainMenu extends Activity
         CC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                timer.stopCountDownTimer();
                 startActivity(new Intent(MainMenu.this, CCMenu.class));
                 finish();
             }
@@ -81,9 +86,10 @@ public class MainMenu extends Activity
 
         catch(Exception e)
         {
+            timer.stopCountDownTimer();
             startActivity(new Intent(MainMenu.this, ErrorScreen.class));
             finish();
         }
-
     }
+
 }

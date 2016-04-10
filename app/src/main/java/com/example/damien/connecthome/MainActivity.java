@@ -57,17 +57,56 @@ public class MainActivity extends Activity
             @Override
             public void onClick(View v)
             {
-                if(ed1.getText().toString().equals(networkSSID) &&
+                if (ed1.getText().toString().equals(networkSSID) &&
                         ed2.getText().toString().equals(networkPass))
                 {
-                    Toast.makeText(getApplicationContext(), "Signing In",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Signing In", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(MainActivity.this, MainMenu.class));
                     finish();
                 }
 
+                else if (ed1.getText().toString().equals(networkSSID))
+                {
+                    Toast.makeText(getApplicationContext(), "Wrong Password", Toast.LENGTH_SHORT).show();
+                    tx.setVisibility(View.VISIBLE);
+                    tx1.setVisibility(View.VISIBLE);
+                    tx1.setBackgroundColor(Color.RED);
+                    counter--;
+                    tx1.setText(Integer.toString(counter));
+
+                    if (counter == 0)
+                    {
+                        finish();
+                        Intent intent = new Intent(Intent.ACTION_MAIN);
+                        intent.addCategory(intent.CATEGORY_HOME);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        startActivity(intent);
+                    }
+                }
+
+                else if (ed2.getText().toString().equals(networkPass))
+                {
+                    Toast.makeText(getApplicationContext(), "Wrong Network Name", Toast.LENGTH_SHORT).show();
+                    tx.setVisibility(View.VISIBLE);
+                    tx1.setVisibility(View.VISIBLE);
+                    tx1.setBackgroundColor(Color.RED);
+                    counter--;
+                    tx1.setText(Integer.toString(counter));
+
+                    if (counter == 0)
+                    {
+                        finish();
+                        Intent intent = new Intent(Intent.ACTION_MAIN);
+                        intent.addCategory(intent.CATEGORY_HOME);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        startActivity(intent);
+                    }
+
+                }
+
                 else
                 {
-                    Toast.makeText(getApplicationContext(), "Wrong Router Name or Password",Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "Wrong Network Name and Password", Toast.LENGTH_LONG).show();
                     tx.setVisibility(View.VISIBLE);
                     tx1.setVisibility(View.VISIBLE);
                     tx1.setBackgroundColor(Color.RED);
@@ -86,10 +125,8 @@ public class MainActivity extends Activity
             }
         });
 
-        Cancel.setOnClickListener(new View.OnClickListener()
-        {
-            public void onClick(View v)
-            {
+        Cancel.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
                 finish();
                 System.exit(0);
             }

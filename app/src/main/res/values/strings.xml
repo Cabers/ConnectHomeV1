@@ -4,7 +4,7 @@
     <string name="content_description">The logo of the Connect Home app</string>
     <string name="header_image">The Connect Home Header</string>
     <string name="splash_image">Splash Image</string>
-    <string name="router_name">Router Name</string>
+    <string name="network_name">Network Name</string>
     <string name="password">Password</string>
     <string name="attempts">Attempts Left:</string>
     <string name="sign_in">Sign In</string>

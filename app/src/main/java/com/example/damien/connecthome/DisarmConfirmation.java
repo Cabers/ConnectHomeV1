@@ -36,6 +36,7 @@ public class DisarmConfirmation extends Activity
             @Override
             public void onClick(View v)
             {
+                timer.stopCountDownTimer();
                 startActivity(new Intent(DisarmConfirmation.this, AlarmMenu.class));
                 finish();
             }
@@ -48,6 +49,7 @@ public class DisarmConfirmation extends Activity
 
         catch(Exception e)
         {
+            timer.stopCountDownTimer();
             startActivity(new Intent(DisarmConfirmation.this, ErrorScreen.class));
             finish();
         }

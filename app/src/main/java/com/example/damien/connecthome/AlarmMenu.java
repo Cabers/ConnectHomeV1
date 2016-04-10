@@ -51,6 +51,7 @@ public class AlarmMenu extends Activity
         Logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                timer.stopCountDownTimer();
                 startActivity(new Intent(AlarmMenu.this, LogoutScreen.class));
                 finish();
             }
@@ -61,6 +62,7 @@ public class AlarmMenu extends Activity
             @Override
             public void onClick(View v)
             {
+                timer.stopCountDownTimer();
                 startActivity(new Intent(AlarmMenu.this, MainMenu.class));
                 finish();
             }
@@ -73,7 +75,7 @@ public class AlarmMenu extends Activity
             {
                 if (ed1.getText().toString().equals(passcode))
                 {
-                    timer.restartCountDownTimer();
+                    timer.stopCountDownTimer();
                     PowerState state = PowerState.SET;
                     System.out.println(state.getStateCode());
                     Toast.makeText(getApplicationContext(), "Redirecting...", Toast.LENGTH_SHORT).show();
@@ -123,7 +125,7 @@ public class AlarmMenu extends Activity
             {
                 if(ed2.getText().toString().equals(passcode))
                 {
-                    timer.restartCountDownTimer();
+                    timer.stopCountDownTimer();
                     PowerState state = PowerState.DISARM;
                     System.out.println(state.getStateCode());
                     Toast.makeText(getApplicationContext(), "Redirecting...", Toast.LENGTH_SHORT).show();
@@ -173,6 +175,7 @@ public class AlarmMenu extends Activity
 
         catch(Exception e)
         {
+            timer.stopCountDownTimer();
             startActivity(new Intent(AlarmMenu.this, ErrorScreen.class));
             finish();
         }

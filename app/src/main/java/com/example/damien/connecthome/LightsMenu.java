@@ -48,6 +48,7 @@ public class LightsMenu extends Activity
             @Override
             public void onClick(View v)
             {
+                timer.stopCountDownTimer();
                 startActivity(new Intent(LightsMenu.this, LogoutScreen.class));
                 finish();
             }
@@ -58,6 +59,7 @@ public class LightsMenu extends Activity
             @Override
             public void onClick(View v)
             {
+                timer.stopCountDownTimer();
                 startActivity(new Intent(LightsMenu.this, MainMenu.class));
                 finish();
             }
@@ -284,6 +286,7 @@ public class LightsMenu extends Activity
 
         catch(Exception e)
         {
+            timer.stopCountDownTimer();
             startActivity(new Intent(LightsMenu.this, ErrorScreen.class));
             finish();
         }

@@ -36,6 +36,7 @@ public class SetConfirmation extends Activity
             @Override
             public void onClick(View v)
             {
+                timer.stopCountDownTimer();
                 startActivity(new Intent(SetConfirmation.this, AlarmMenu.class));
                 finish();
             }
@@ -48,6 +49,7 @@ public class SetConfirmation extends Activity
 
         catch(Exception e)
         {
+            timer.stopCountDownTimer();
             startActivity(new Intent(SetConfirmation.this, ErrorScreen.class));
             finish();
         }
