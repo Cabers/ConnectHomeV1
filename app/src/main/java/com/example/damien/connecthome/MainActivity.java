@@ -15,8 +15,8 @@ import android.widget.Toast;
 
 public class MainActivity extends Activity
 {
-    String networkSSID = "test";
-    String networkPass = "pass";
+    String networkSSID = "WIT2016";
+    String networkPass = "PROJECT";
     Button SignIn,Cancel;
     EditText ed1,ed2;
     TextView tx, tx1;
